@@ -1,4 +1,5 @@
 import spacy
+import json
 
 nlp = spacy.load('en')
 
@@ -15,3 +16,12 @@ for token in doc:
 
 for x in words: 
 	print(x)
+
+data = json.load(open('keywords.json'))
+
+
+
+#loads the json keywords file into a dict
+for key, value in data.items():
+		for k, v in value.items():
+			print(k)
