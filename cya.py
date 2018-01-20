@@ -1,9 +1,10 @@
-from textblob import TextBlob
-#import requests
-#import nltk
+import spacy
 
-post = input("Please type your post here: ")
+nlp = spacy.load('en')
 
-blob = TextBlob(post)
+to_process = input('enter some string: ')
 
-x = blob.noun_phrases
+doc = nlp(to_process)
+
+for token in doc:
+    print(token.text, token.pos_)
