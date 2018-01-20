@@ -1,0 +1,126 @@
+var nouns = {
+	"Trump" : {
+		"type" : "negative"
+		"score" : "1"
+	}s
+
+	"Obama" : {
+		"type" : "positive"
+		"score" : "2"
+	}
+
+	"healthcare" : {
+		"type" : "positive"
+		"score" : "3"
+	}
+
+	"abortion" : {
+		"type" : "positive"
+		"score" : "4"
+	}
+
+	"taxes" : {
+		"type" : "negative"
+		"score" : "5"
+	}
+
+	"Israel" : {
+		"type" : "neutral"
+		"score" : "6"
+	}
+
+	"CNN" : {
+		"type" : "negative"
+		"score" : "7"
+	}
+
+	"idiot" : {
+		"type" : "negative"
+		"score" : "8"
+	}
+
+	"Fake News" : {
+		"type" : "negative"
+		"score" : "9"
+	}
+
+	"capitalism" : {
+		"type" : "positive"
+		"score" : 24
+	}
+
+	"communism" : {
+		"type" : "negative"
+		"score" : "10"
+	}
+
+	"socialism" : {
+		"type" : "positive"
+		score : "20"
+	}
+
+	"north korea" : {
+		"type" :
+		"score" : "11"
+	}
+
+	"fascism" : {
+		"type" :
+		"score" : "12"
+	}
+
+	"equality" : {
+		"type" :
+		"score" : "13"
+	}
+
+	"lunatic" : {
+		"type" :
+		"score" : "14"
+	}
+
+	"woman" : {
+		"type" :
+		"score" : "15"	
+	}
+
+	"body" : {
+		"type" :
+		"score" : "16"	
+	}
+}
+
+var adjective = {
+	"racist" : {
+		"score" : "1"
+		"type" : "negative"
+	}
+
+	"sexist" : {
+		"score" : "2"
+		"type" : "negative"
+	}
+
+
+	"intelligent" : {
+		"score" : "3"
+		"type" : "positive"
+	}
+
+	"murderous" : {
+		"score" : "4"
+		"type" : "negative"
+	}
+
+	"evil" : {
+		"score" : "5"
+		"type" : "negative"
+	}
+
+	"effective" : {
+		"score" : "6"
+		"type" : "positive"
+	}
+
+
+}
