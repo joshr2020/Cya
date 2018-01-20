@@ -8,9 +8,8 @@ name = "pypi"
 [packages]
 
 requests = "*"
-nltk = "*"
 "beautifulsoup4" = "*"
-textblob = "*"
+spacy = "*"
 
 
 [dev-packages]
