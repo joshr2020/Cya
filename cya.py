@@ -1,4 +1,6 @@
 import requests
-import beautifulsoup4
+import nltk
+
+facebook_post = input("Please type your post here: ")
 
 print("hi")
