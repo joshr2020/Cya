@@ -1,6 +1,9 @@
+from textblob import TextBlob
 #import requests
 #import nltk
 
-facebook_post = input("Please type your post here: ")
+post = input("Please type your post here: ")
 
-input.split(" ")
+blob = TextBlob(post)
+
+x = blob.noun_phrases
