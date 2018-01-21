@@ -11,13 +11,12 @@ def nounfind(list):
 	return matches
 
 #loops through list
-def adjfind(list):
-	matches = []
+def adjFindPerStatement(list):
+	matchString = ""
 	for row in list:
-
-		if row[1] == 'ADJ':
-			matches.append(row[0])
-	return matches
+		if row[1] == 'ADJ' or row[1] == 'PUNCT':
+			matchString += str(row[0])
+	return matchString
 
 #loops through dictionary
 def findWordDict(input_dict, word):
@@ -34,7 +33,11 @@ def matchWords(data, inputSet):
 	input_nouns = nounfind(inputSet)
 	#print(input_nouns)
 	#calls adj to filter for adjectives
-	input_adj = adjfind(inputSet)
+	input_adj_string = adjFindPerStatement(inputSet)
+	print(input_adj_string)
+	input_adj = input_adj_string.split(".")
+
+	print(input_adj)
 
 	#exits if no nouns exist
 	if len(input_nouns) == 0:
@@ -42,13 +45,23 @@ def matchWords(data, inputSet):
 		exit(0)
 
 	noun_matches = []
+
 	#loops through nouns to see if there is match
 	for noun in input_nouns:
 		 if findWordDict(nounDataBase, noun) == 1:
 		 	noun_matches.append(noun)
 	print(noun_matches)
 
-	return 2
+	adj_matches = []
+
+	#loops through adj to see if there is match
+	for adj in input_adj:
+		 if findWordDict(adjDataBase, adj) == 1:
+		 	adj_matches.append(adj)
+	print(adj_matches)
+	
+	final_noun_adj_pair = (noun_matches, adj_matches)
+	return final_noun_adj_pair
 
 
 def process(to_process):
@@ -57,7 +70,11 @@ def process(to_process):
 
     doc = nlp(to_process)
 
-    #print(doc.noun_chunks)
+    
+    noun_adj_pair = doc.noun_chunks
+
+    for chunk in noun_adj_pair:
+    	print(chunk.text)
 
     words = []
 
@@ -71,5 +88,6 @@ def process(to_process):
     #loads JSON into array
     data = json.load(open('keywords.json'))
 
-    #Finds Match
-    return matchWords(data, words)
+    #Finds Matching nouns and adj
+    result_pair = matchWords(data, words)
+    return 10
