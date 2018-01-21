@@ -1,7 +1,7 @@
 import cya
 from flask import Flask, render_template, request
 app = Flask(__name__)
-app.debug=True
+app.debug=False
 
 @app.route('/', methods =['GET'])
 def index():
@@ -14,8 +14,8 @@ def form_page():
 @app.route('/handle-form', methods=['POST', 'GET'])
 def handle_form_page():
     msg = request.form['user_msg']
-    score = cya.process(msg)
-    return render_template("result.html", score = score)
+    result = cya.process(msg)
+    return render_template("result.html", result = result)
     # return "The message is: {}".format(msg)
 
 
