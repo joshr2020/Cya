@@ -59,35 +59,46 @@ def matchWords(data, inputSet):
 		 if findWordDict(adjDataBase, adj) == 1:
 		 	adj_matches.append(adj)
 	print(adj_matches)
-	
-	final_noun_adj_pair = (noun_matches, adj_matches)
-	return final_noun_adj_pair
 
+	return noun_matches, adj_matches
+
+def calculate_score(data, noun_matches, adj_matches):
+	total_score = 0
+	for i in range(0, len(noun_matches)):
+		a_score = 0
+		if data['nouns'][noun_matches[i]]['type'] is 'trigger':
+			a_score = data['nouns'][noun_matches[i]]['score'] * 3
+		elif data['nouns'][noun_matches[i]]['type'] is not data['adjective'][adj_matches[i]]['type']:
+			a_score = 2 * (data['nouns'][noun_matches[i]]['score'] + data['adjective'][adj_matches[i]]['score'])
+		else:
+			a_score = data['nouns'][noun_matches[i]]['score'] + data['adjective'][adj_matches[i]]['score']
+		total_score = total_score + int(a_score)
+	return total_score / len(noun_matches)
 
 def process(to_process):
-    #loads and tolkenizes
-    nlp = spacy.load('en')
+	#loads and tolkenizes
+	nlp = spacy.load('en')
 
-    doc = nlp(to_process)
+	doc = nlp(to_process)
 
-    
-    noun_adj_pair = doc.noun_chunks
+	noun_adj_pair = doc.noun_chunks
 
-    for chunk in noun_adj_pair:
-    	print(chunk.text)
+	for chunk in noun_adj_pair:
+		print(chunk.text)
 
-    words = []
+	words = []
 
-    for token in doc:
-        row = [str(token.text), str(token.pos_)]
-        words.append(row)
+	for token in doc:
+		row = [str(token.text), str(token.pos_)]
+		words.append(row)
 
-    for x in words:
-    	print(x)
+	for x in words:
+		print(x)
 
-    #loads JSON into array
-    data = json.load(open('keywords.json'))
+	#loads JSON into array
+	data = json.load(open('keywords.json'))
 
-    #Finds Matching nouns and adj
-    result_pair = matchWords(data, words)
-    return 10
+	#Finds Matching nouns and adj
+	noun_matches, adj_matches = matchWords(data, words)
+	score = calculate_score(data, noun_matches, adj_matches)
+	return score

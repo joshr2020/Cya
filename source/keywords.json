@@ -2,129 +2,129 @@
 	"nouns": {
 		"Trump" : {
 			"type" : "negative",
-			"score" : "8"
+			"score" : 8
 		},
 
 		"Obama" : {
 			"type" : "positive",
-			"score" : "5"
+			"score" : 5
 		},
 
 		"healthcare" : {
 			"type" : "positive",
-			"score" : "3"
+			"score" : 3
 		},
 
 		"abortion" : {
 			"type" : "trigger",
-			"score" : "10"
+			"score" : 10
 		},
 
 		"taxes" : {
 			"type" : "negative",
-			"score" : "4"
+			"score" : 4
 		},
 
 		"Men" : {
 			"type" : "positive",
-			"score" : "4"
+			"score" : 4
 		},
 
 		"Israel" : {
 			"type" : "trigger",
-			"score" : "8"
+			"score" : 8
 		},
 
 		"CNN" : {
 			"type" : "negative",
-			"score" : "2"
+			"score" : 2
 		},
 
 		"idiot" : {
 			"type" : "negative",
-			"score" : "1"
+			"score" : 1
 		},
 
 		"Fake News" : {
 			"type" : "negative",
-			"score" : "5"
+			"score" : 5
 		},
 
 		"capitalism" : {
 			"type" : "positive",
-			"score" : "2"
+			"score" : 2
 		},
 
 		"communism" : {
 			"type" : "negative",
-			"score" : "4"
+			"score" : 4
 		},
 
 		"socialism" : {
 			"type" : "positive",
-			"score" : "6"
+			"score" : 6
 		},
 
 		"north korea" : {
 			"type" : "negative",
-			"score" : "4"
+			"score" : 4
 		},
 
 		"fascism" : {
 			"type" : "negative",
-			"score" : "4"
+			"score" : 4
 		},
 
 		"equality" : {
 			"type" : "positive",
-			"score" : "5"
+			"score" : 5
 		},
 
 		"lunatic" : {
 			"type" : "negative",
-			"score" : "3"
+			"score" : 3
 		},
 
 		"woman" : {
 			"type" : "positive",
-			"score" : "6"
+			"score" : 6
 		},
 
 		"body" : {
 			"type" : "positive",
-			"score" : "5"
+			"score" : 5
 		}
 	},
 
 	"adjective" : {
 		"racist" : {
-			"score" : "4",
+			"score" : 4,
 			"type" : "negative"
 		},
 
 		"sexist" : {
-			"score" : "5",
+			"score" : 5,
 			"type" : "negative"
 		},
 
 
 		"intelligent" : {
-			"score" : "1",
+			"score" : 1,
 			"type" : "positive"
 		},
 
 		"murderous" : {
-			"score" : "2",
+			"score" : 2,
 			"type" : "negative"
 		},
 
 		"evil" : {
-			"score" : "3",
+			"score" : 3,
 			"type" : "negative"
 		},
 
 		"effective" : {
-			"score" : "3",
+			"score" : 3,
 			"type" : "positive"
 		}
 	}
