@@ -39,11 +39,6 @@ def matchWords(data, inputSet):
 
 	print(input_adj)
 
-	#exits if no nouns exist
-	if len(input_nouns) == 0:
-		print("No nouns here match our database.")
-		exit(0)
-
 	noun_matches = []
 
 	#loops through nouns to see if there is match
@@ -100,5 +95,18 @@ def process(to_process):
 
 	#Finds Matching nouns and adj
 	noun_matches, adj_matches = matchWords(data, words)
+
+	#The edge cases
+	if len(noun_matches) == 0:
+		score = 0
+		return score
+	if len(adj_matches) == 0:
+		total = 0
+		for i in range(0, len(noun_matches)):
+			part_score = data['nouns'][noun_matches[i]]['score']
+			total = total + int(part_score)
+		score = total/len(noun_matches)
+		return score
+
 	score = calculate_score(data, noun_matches, adj_matches)
 	return score
