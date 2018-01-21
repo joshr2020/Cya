@@ -14,8 +14,8 @@ def form_page():
 @app.route('/handle-form', methods=['POST'])
 def handle_form_page():
     msg = request.form['user_msg']
-    doc = cya.process(msg)
-    return "the message is: {}".format(doc)
+    score = cya.process(msg)
+    return "the score is: {}".format(score)
     # return "The message is: {}".format(msg)
 
 
