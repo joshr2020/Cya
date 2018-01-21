@@ -1,9 +1,43 @@
-<form action="/handle-form" method="post">
-    <div>
-        <label for="msg">Text to check:</label>
-        <textarea id="msg" name="user_msg"></textarea>
-    </div>
-    <div class="button">
-        <button type="submit">Check your text</button>
-    </div>
-</form>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Cya</title>
+		<link rel="shortcut icon" href="http://moziru.com/images/magical-clipart-crystal-ball-2.jpg" type="image/x-icon"/>
+	
+	<style>
+		body {background-color: powderblue;}
+		h2 {font-size: 34px; text-align: center; }
+		.form_format {padding-left: 40%;}
+		button { background-color: green; border: none; color: white; padding: 9px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 30px; border-radius: 6px;}
+		label {padding-left: 45%;}
+		.button {padding-left: 44%;}
+		.area {padding-left: 32%;}
+		textarea {width: 500px; height: 400px; border: 3px solid #cccccc; padding: 5px;font-family: Tahoma, sans-serif; background-color: #f9eaa4; background-position: bottom right; background-repeat: no-repeat;}
+
+		button:hover {background-color: blue; color: white; }
+		
+	</style>
+	
+	</head>
+
+	<body>
+		<h2>Please Enter Your Social Media Post</h2>
+		<br>
+		
+		<form action="/handle-form" method="post">
+    		<div>
+        		<label for="msg">Enter Text Below</label>
+        		<br>
+        		<div class = "area">
+        		<textarea id="msg" name="user_msg"></textarea>
+    			</div>
+    		</div>
+    		<br>
+    		<div class="button">
+        		<button type="submit">Predict!</button>
+    		</div>
+		</form>
+		
+	
+	</body>
+</html>

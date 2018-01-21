@@ -11,11 +11,11 @@ def index():
 def form_page():
     return render_template('form.html')
 
-@app.route('/handle-form', methods=['POST'])
+@app.route('/handle-form', methods=['POST', 'GET'])
 def handle_form_page():
     msg = request.form['user_msg']
     score = cya.process(msg)
-    return "the score is: {}".format(score)
+    return render_template("result.html", score = score)
     # return "The message is: {}".format(msg)
 
 
