@@ -3,9 +3,9 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 app.debug=True
 
-@app.route('/')
-def hello_world():
-    return 'Hello world!'
+@app.route('/', methods =['GET'])
+def index():
+    return render_template('index.html')
 
 @app.route('/form', methods=['GET'])
 def form_page():
